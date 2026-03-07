@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SterilySense Dashboard Design System - Soft Medical Tech Aesthetic */
+
+@layer base {
+  :root {
+    /* Base Background - Soft Clinical Blue */
+    --background: 210 30% 96%;
+    --foreground: 222 28% 14%;
+
+    /* Card System - Subtle Glass */
+    --card: 0 0% 100%;
+    --card-foreground: 222 28% 14%;
+    --card-glow: 185 70% 45%;
+
+    /* Popover & Overlays */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 28% 14%;
+
+    /* Primary Brand - Medical Teal */
+    --primary: 185 80% 38%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 185 80% 55%;
+    --primary-dark: 185 80% 28%;
+
+    /* Secondary - Calm Medical Blue */
+    --secondary: 210 85% 48%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 210 85% 65%;
+
+    /* Success - Sterile Green */
+    --success: 145 65% 38%;
+    --success-foreground: 0 0% 100%;
+    --success-glow: 145 65% 55%;
+
+    /* Warning - Soft Amber */
+    --warning: 38 90% 55%;
+    --warning-foreground: 0 0% 100%;
+    --warning-glow: 38 90% 70%;
+
+    /* Danger - Medical Red */
+    --danger: 0 70% 50%;
+    --danger-foreground: 0 0% 100%;
+    --danger-glow: 0 70% 65%;
+
+    /* Muted Elements */
+    --muted: 210 25% 92%;
+    --muted-foreground: 215 18% 45%;
+
+    /* Accent - Soft Lavender */
+    --accent: 260 60% 65%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 260 60% 80%;
+
+    /* Destructive */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Interactive Elements */
+    --border: 214 20% 88%;
+    --input: 214 20% 90%;
+    --ring: 185 80% 38%;
+
+    /* Design Tokens */
+    --radius: 0.75rem;
+    --radius-large: 1rem;
+    --radius-full: 9999px;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-danger: linear-gradient(135deg, hsl(var(--danger)), hsl(var(--warning)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(var(--primary)));
+    --gradient-glass: linear-gradient(
+      135deg,
+      hsl(var(--card) / 0.9),
+      hsl(var(--card) / 0.6)
+    );
+    --gradient-glow: radial-gradient(
+      circle at center,
+      hsl(var(--primary-glow) / 0.25),
+      transparent 70%
+    );
+
+    /* Shadows & Glows (Softened) */
+    --shadow-glow: 0 0 24px hsl(var(--primary-glow) / 0.25);
+    --shadow-danger: 0 0 24px hsl(var(--danger-glow) / 0.3);
+    --shadow-success: 0 0 24px hsl(var(--success-glow) / 0.25);
+    --shadow-card: 0 6px 20px rgba(0, 0, 0, 0.08);
+    --shadow-elevated: 0 14px 36px rgba(0, 0, 0, 0.12);
+
+    /* Sidebar */
+    --sidebar-background: 210 30% 94%;
+    --sidebar-foreground: 222 28% 18%;
+    --sidebar-primary: 185 80% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 30% 90%;
+    --sidebar-accent-foreground: 222 28% 18%;
+    --sidebar-border: 214 20% 85%;
+    --sidebar-ring: 185 80% 38%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    background:
+      radial-gradient(ellipse at top, hsl(var(--primary) / 0.08), transparent 50%),
+      radial-gradient(ellipse at bottom, hsl(var(--secondary) / 0.08), transparent 50%),
+      hsl(var(--background));
+  }
+
+  .font-inter { font-family: 'Inter', sans-serif; }
+  .font-mono { font-family: 'JetBrains Mono', monospace; }
+}
+
+/* Custom Animations (unchanged) */
+@keyframes glow {
+  0% { box-shadow: 0 0 18px hsl(var(--primary-glow) / 0.25); }
+  100% { box-shadow: 0 0 36px hsl(var(--primary-glow) / 0.45); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 16px hsl(var(--primary-glow) / 0.35);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px hsl(var(--primary-glow) / 0.6);
+    transform: scale(1.015);
+  }
+}
+
+@keyframes data-flow {
+  0% { transform: translateX(-100%) translateY(0); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100vw) translateY(-20px); opacity: 0; }
+}
+
+@keyframes contamination-alert {
+  0%, 100% { background-color: hsl(var(--danger) / 0.15); }
+  50% { background-color: hsl(var(--danger) / 0.35); }
+}
+
+/* Utilities (unchanged) */
+@layer utilities {
+  .glow-primary { box-shadow: var(--shadow-glow); }
+  .glow-danger { box-shadow: var(--shadow-danger); }
+  .glow-success { box-shadow: var(--shadow-success); }
+
+  .animate-glow { animation: glow 3s ease-in-out infinite alternate; }
+  .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+  .animate-data-flow { animation: data-flow 4s linear infinite; }
+  .animate-contamination-alert { animation: contamination-alert 1s ease-in-out infinite; }
+
+  .glass-card {
+    background: var(--gradient-glass);
+    border: 1px solid hsl(var(--border));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .gradient-primary { background: var(--gradient-primary); }
+  .gradient-danger { background: var(--gradient-danger); }
+  .gradient-success { background: var(--gradient-success); }
+}
