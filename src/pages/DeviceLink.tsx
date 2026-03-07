@@ -40,8 +40,8 @@ const DeviceLink: React.FC<DeviceLinkProps> = ({ onDeviceLinked }) => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url("../public/images/robot.jpeg")`,
-        }}
+  backgroundImage: `url("/images/robot.jpeg")`,
+}}
       />
 
       {/* ---------- DARK OVERLAY ---------- */}
@@ -62,7 +62,7 @@ const DeviceLink: React.FC<DeviceLinkProps> = ({ onDeviceLinked }) => {
   {/* Logo */}
   <div className="flex items-center gap-4 mb-8">
     <img
-      src="../public/images/logo.jpeg" // your logo
+     src="/images/logo.jpeg" 
       alt="SterilySense Logo"
       className="w-14 h-14 object-contain rounded-xl shadow-md"
     />

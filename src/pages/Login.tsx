@@ -33,13 +33,16 @@ const Login = ({ onLogin }: LoginProps) => {
   return (
     <div className="relative w-full h-screen overflow-hidden">
       {/* Background Video */}
-      <video
-        src="/videos/ai-vaccum-bg.mp4"
-        autoPlay
-        loop
-        muted
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-      />
+     <video
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto"
+  className="absolute top-0 left-0 w-full h-full object-cover z-0"
+>
+  <source src="/videos/ai-vaccum-bg.mp4" type="video/mp4" />
+</video>
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60 z-10" />
