@@ -72,10 +72,10 @@ const Index = () => {
   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-purple-500 blur-md opacity-70"></div>
   <div className="relative w-14 h-14 rounded-full bg-background flex items-center justify-center">
     <img
-      src="../public/images/logo.jpeg"
-      alt="Logo"
-      className="w-10 h-10 object-contain rounded-full"
-    />
+  src="/images/logo.jpeg"
+  alt="Sterilysense Logo"
+  className="w-10 h-10 object-contain rounded-full"
+/>
   </div>
 </div>
               <div>
