@@ -35,7 +35,7 @@ const LiveCameraFeed: React.FC = () => {
     useState<MediaRecorder | null>(null);
 
   // ✅ Stream URL
-  const streamUrl = "https://ml.logesh.site/video_feed";
+  const streamUrl = "https://ai.logesh.site/video_feed";
 
   // 🟢 Toggle feed
   const toggleFeed = () => setIsLive((prev) => !prev);
@@ -114,7 +114,7 @@ const LiveCameraFeed: React.FC = () => {
 
     const interval = setInterval(async () => {
       try {
-        const res = await fetch("https://logesh.site/analysis");
+        const res = await fetch("https://ai.logesh.site/analysis");
         const data = await res.json();
 
         console.log("🧬 Analysis data:", data);
